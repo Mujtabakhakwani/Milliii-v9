@@ -1,0 +1,248 @@
+/* Rich Text Input Custom Styling */
+.rich-text-input-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem 0.25rem 1rem;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+}
+
+.dark .rich-text-input-container {
+  background: #1f2937;
+  border-top-color: #374151;
+}
+
+.rich-text-wrapper {
+  flex: 1;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: white;
+}
+
+.dark .rich-text-wrapper {
+  background: #374151;
+  border-color: #4b5563;
+}
+
+.rich-text-wrapper.focused {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Toolbar */
+.rich-text-toolbar {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.dark .rich-text-toolbar {
+  background: #1f2937;
+  border-bottom-color: #4b5563;
+}
+
+.toolbar-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.375rem;
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.toolbar-button:hover:not(:disabled) {
+  background: #e5e7eb;
+  color: #6366f1;
+}
+
+.dark .toolbar-button {
+  color: #9ca3af;
+}
+
+.dark .toolbar-button:hover:not(:disabled) {
+  background: #374151;
+  color: #818cf8;
+}
+
+.toolbar-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.toolbar-button.active {
+  background: #e5e7eb;
+  color: #6366f1;
+}
+
+.dark .toolbar-button.active {
+  background: #374151;
+  color: #818cf8;
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 1.5rem;
+  background: #d1d5db;
+  margin: 0 0.25rem;
+}
+
+.dark .toolbar-divider {
+  background: #4b5563;
+}
+
+/* Editor */
+.rich-text-editor {
+  padding: 0.75rem 1rem;
+  min-height: 44px;
+  max-height: 150px;
+  overflow-y: auto;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #111827;
+  outline: none;
+}
+
+.dark .rich-text-editor {
+  color: #f3f4f6;
+}
+
+.rich-text-editor:empty:before {
+  content: attr(data-placeholder);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.dark .rich-text-editor:empty:before {
+  color: #6b7280;
+}
+
+/* Formatting in editor */
+.rich-text-editor strong,
+.rich-text-editor b {
+  font-weight: 600;
+}
+
+.rich-text-editor em,
+.rich-text-editor i {
+  font-style: italic;
+}
+
+.rich-text-editor a {
+  color: #6366f1;
+  text-decoration: underline;
+}
+
+.rich-text-editor pre,
+.rich-text-editor code {
+  background: #f3f4f6;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875em;
+}
+
+.dark .rich-text-editor pre,
+.dark .rich-text-editor code {
+  background: #1f2937;
+}
+
+/* Send Button */
+.send-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  height: 44px;
+  width: 44px;
+  flex-shrink: 0;
+}
+
+.send-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.send-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Message Content Rendering */
+.message-content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  color: #374151;
+}
+
+.dark .message-content {
+  color: #d1d5db;
+}
+
+.message-content p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.message-content strong,
+.message-content b {
+  font-weight: 600;
+  color: #111827;
+}
+
+.dark .message-content strong,
+.dark .message-content b {
+  color: #f3f4f6;
+}
+
+.message-content em,
+.message-content i {
+  font-style: italic;
+}
+
+.message-content a {
+  color: #6366f1 !important;
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+
+.message-content a:hover {
+  color: #4f46e5 !important;
+  text-decoration: underline;
+}
+
+.message-content code {
+  background: #f3f4f6;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875em;
+}
+
+.dark .message-content code {
+  background: #374151;
+}
+
+/* Mention tag styling */
+.message-content .mention-tag {
+  display: inline-block !important;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.message-content .mention-tag:hover {
+  opacity: 0.9;
+}

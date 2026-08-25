@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body class="app-body">
+  <div class="app-shell">
+    <% include('partials/sidebar', { active }); %>
+    <div class="app-main">
+      <% include('partials/topbar', { userName, title }); %>
+      <div class="app-content">
+        <h2>My Tasks</h2>
+        <!-- later: render tasks list / board from "tasks" -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>

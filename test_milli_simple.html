@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Milli API</title>
+</head>
+<body>
+    <h1>Testing Milli API Endpoint</h1>
+    <div id="results"></div>
+
+    <script>
+        async function testMilliAPI() {
+            const results = document.getElementById('results');
+            
+            // Get token from localStorage (open your actual app first to get this)
+            const token = localStorage.getItem('token');
+            
+            if (!token) {
+                results.innerHTML = `
+                    <p style="color: red;">❌ No token found in localStorage</p>
+                    <p>Please:</p>
+                    <ol>
+                        <li>Open your app at http://localhost:3000</li>
+                        <li>Login</li>
+                        <li>Open browser console (F12)</li>
+                        <li>Type: localStorage.getItem('token')</li>
+                        <li>Copy the token</li>
+                        <li>Run this in console: localStorage.setItem('token', 'YOUR_TOKEN_HERE')</li>
+                        <li>Refresh this page</li>
+                    </ol>
+                `;
+                return;
+            }
+            
+            results.innerHTML = '<p>Testing API endpoint...</p>';
+            
+            try {
+                const response = await fetch('http://localhost:8000/api/milli/channel', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    results.innerHTML = `
+                        <p style="color: green;">✅ SUCCESS! Milli channel retrieved</p>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                        <p><strong>The backend is working fine!</strong></p>
+                        <p>The issue must be in the frontend React code.</p>
+                    `;
+                } else {
+                    results.innerHTML = `
+                        <p style="color: red;">❌ API Error: ${response.status}</p>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                }
+            } catch (error) {
+                results.innerHTML = `
+                    <p style="color: red;">❌ Network Error</p>
+                    <pre>${error.message}</pre>
+                    <p>This could be CORS or connection issue.</p>
+                `;
+            }
+        }
+        
+        // Run test
+        testMilliAPI();
+    </script>
+</body>
+</html>
+

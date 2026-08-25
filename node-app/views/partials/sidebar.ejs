@@ -1,0 +1,54 @@
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="sidebar-logo-icon">✦</div>
+    <div class="sidebar-logo-text">Millii</div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="/dashboard" class="sidebar-link <%= active === 'dashboard' ? 'is-active' : '' %>">
+      <span class="sidebar-dot"></span>
+      <span>Dashboard</span>
+    </a>
+
+    <a href="/my-tasks" class="sidebar-link <%= active === 'my-tasks' ? 'is-active' : '' %>">
+      <span class="sidebar-dot"></span>
+      <span>My Tasks</span>
+    </a>
+
+    <a href="/projects" class="sidebar-link <%= active === 'projects' ? 'is-active' : '' %>">
+      <span class="sidebar-dot"></span>
+      <span>My Projects</span>
+    </a>
+
+    <a href="/chats" class="sidebar-link <%= active === 'chats' ? 'is-active' : '' %>">
+      <span class="sidebar-dot"></span>
+      <span>Chats</span>
+    </a>
+
+    <a href="/team-members" class="sidebar-link <%= active === 'team-members' ? 'is-active' : '' %>">
+      <span class="sidebar-dot"></span>
+      <span>Team Members</span>
+    </a>
+
+    <a href="/time-sheet" class="sidebar-link <%= active === 'time-sheet' ? 'is-active' : '' %>">
+      <span class="sidebar-dot"></span>
+      <span>Time Sheet</span>
+    </a>
+
+    <a href="/reports" class="sidebar-link <%= active === 'reports' ? 'is-active' : '' %>">
+      <span class="sidebar-dot"></span>
+      <span>Reports</span>
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <a href="/settings" class="sidebar-link sidebar-settings <%= active === 'settings' ? 'is-active' : '' %>">
+      <span>⚙</span>
+      <span>Settings</span>
+    </a>
+    <a href="/logout" class="sidebar-link sidebar-logout">
+      <span>⟵</span>
+      <span>Logout</span>
+    </a>
+  </div>
+</aside>

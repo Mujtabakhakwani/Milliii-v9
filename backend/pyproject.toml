@@ -1,0 +1,60 @@
+# This project uses uv for local development.
+# After modifying dependencies, regenerate requirements.txt for Vercel:
+# uv pip compile pyproject.toml -o requirements.txt
+
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    # Core Framework
+    "fastapi==0.110.1",
+    "uvicorn==0.25.0",
+    "starlette==0.37.2",
+    
+    # Database
+    "motor==3.3.1",
+    "pymongo==4.5.0",
+    
+    # Data Validation
+    "pydantic==2.12.0",
+    "pydantic-settings==2.6.1",
+    "pydantic_core==2.41.1",
+    "email-validator==2.3.0",
+    
+    # Authentication & Security
+    "PyJWT==2.10.1",
+    "passlib[bcrypt]==1.7.4",
+    "bcrypt==4.1.3",
+    "cryptography==46.0.2",
+    "python-jose==3.5.0",
+    
+    "httpx==0.28.1",
+    
+    # File Handling
+    "python-multipart==0.0.20",
+    
+    # Environment Variables
+    "python-dotenv==1.1.1",
+    
+    # WebSockets
+    "python-socketio==5.14.2",
+    "python-engineio==4.12.3",
+    "websockets==15.0.1",
+    
+    # Utilities
+    "python-dateutil==2.9.0.post0",
+    
+    # Required Core Dependencies
+    "anyio==4.11.0",
+    "certifi==2025.10.5",
+    "click==8.3.0",
+    "h11==0.16.0",
+    "httpcore==1.0.9",
+    "idna==3.10",
+    "sniffio==1.3.1",
+    "typing_extensions==4.15.0",
+    "openai>=1.12.0",
+]

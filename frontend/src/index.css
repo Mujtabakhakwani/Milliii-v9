@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family:
+        source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+@layer base {
+    :root {
+        /* Light mode - Blue-Purple Theme */
+        --background: 245 50% 98%;
+        --foreground: 260 30% 15%;
+        --card: 0 0% 100%;
+        --card-foreground: 260 30% 15%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 260 30% 15%;
+        --primary: 255 65% 65%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 250 60% 95%;
+        --secondary-foreground: 260 30% 15%;
+        --muted: 250 60% 96%;
+        --muted-foreground: 260 15% 50%;
+        --accent: 270 60% 92%;
+        --accent-foreground: 260 30% 15%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 255 20% 88%;
+        --input: 255 20% 88%;
+        --ring: 255 65% 65%;
+        --chart-1: 255 65% 65%;
+        --chart-2: 270 65% 60%;
+        --chart-3: 240 70% 60%;
+        --chart-4: 285 60% 70%;
+        --chart-5: 260 60% 55%;
+        --radius: 0.75rem;
+    }
+    .dark {
+        /* Dark mode - Blue-Purple Theme */
+        --background: 260 40% 8%;
+        --foreground: 250 60% 95%;
+        --card: 260 35% 12%;
+        --card-foreground: 250 60% 95%;
+        --popover: 260 35% 12%;
+        --popover-foreground: 250 60% 95%;
+        --primary: 255 65% 65%;
+        --primary-foreground: 260 40% 8%;
+        --secondary: 260 30% 18%;
+        --secondary-foreground: 250 60% 95%;
+        --muted: 260 30% 18%;
+        --muted-foreground: 250 20% 65%;
+        --accent: 270 40% 20%;
+        --accent-foreground: 250 60% 95%;
+        --destructive: 0 62.8% 50%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 260 30% 20%;
+        --input: 260 30% 20%;
+        --ring: 255 65% 65%;
+        --chart-1: 255 65% 65%;
+        --chart-2: 270 65% 60%;
+        --chart-3: 240 70% 60%;
+        --chart-4: 285 60% 70%;
+        --chart-5: 260 60% 55%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}
+
+@layer utilities {
+    @keyframes scale-in {
+        0% {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: -200% 0;
+        }
+        100% {
+            background-position: 200% 0;
+        }
+    }
+
+    .animate-scale-in {
+        animation: scale-in 0.5s ease-out;
+    }
+
+    .animate-shimmer {
+        animation: shimmer 3s ease-in-out infinite;
+    }
+}

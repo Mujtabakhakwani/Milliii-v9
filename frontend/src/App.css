@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  min-height: 100vh;
+  background-color: #fafafa;
+}
+
+/* Millii Brand Colors */
+:root {
+  --fire-red: #E84118;
+  --fire-deep-red: #C23616;
+  --fire-orange: #FFA502;
+  --fire-yellow: #F6B93B;
+  --fire-gradient: linear-gradient(135deg, #C23616 0%, #E84118 50%, #FFA502 100%);
+}

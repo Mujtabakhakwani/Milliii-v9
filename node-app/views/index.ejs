@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+  <% include('partials/header'); %>
+
+  <main class="content">
+    <h2>Dashboard</h2>
+
+    <section class="cards">
+      <div class="card">
+        <h3>Total Users</h3>
+        <p><%= stats.users %></p>
+      </div>
+      <div class="card">
+        <h3>Total Projects</h3>
+        <p><%= stats.projects %></p>
+      </div>
+      <div class="card">
+        <h3>Total Tasks</h3>
+        <p><%= stats.tasks %></p>
+      </div>
+    </section>
+  </main>
+
+  <% include('partials/footer'); %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

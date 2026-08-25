@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title><%= title || 'Milliii' %></title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Milliii Admin</h1>
+    <nav>
+      <a href="/">Dashboard</a>
+      <a href="/users">Users</a>
+      <a href="/projects">Projects</a>
+      <a href="/tasks">Tasks</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <!-- page content -->
+    <%- body %>
+  </main>
+
+  <footer class="footer">
+    <small>&copy; <%= new Date().getFullYear() %> Milliii</small>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

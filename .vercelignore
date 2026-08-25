@@ -1,0 +1,43 @@
+# Python
+backend/venv
+backend/__pycache__
+backend/**/__pycache__
+backend/**/*.pyc
+backend/**/*.pyo
+backend/**/*.pyd
+backend/.pytest_cache
+backend/.mypy_cache
+backend/.ruff_cache
+
+# Node
+node_modules
+frontend/node_modules
+frontend-new/node_modules
+desktop-app/node_modules
+
+# Build artifacts
+frontend/build
+frontend-new/build
+
+# Test files
+*_test.py
+test_*.py
+backend_test.py
+tests/
+
+# Development files
+*.md
+.git
+.gitignore
+.env.local
+.DS_Store
+
+# Uploads (if not needed for deployment)
+uploads/
+backend/uploads/
+
+# Scripts
+scripts/
+backend/scripts/
+*.sh
+
